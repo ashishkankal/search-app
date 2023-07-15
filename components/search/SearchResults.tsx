@@ -3,7 +3,7 @@ import SearchResultItem from "./SearchResultItem";
 
 async function getData(q: string) {
   const dev = process.env.NODE_ENV !== "production";
-  const server = dev ? "http://localhost:3000" : "search-app-inky.vercel.app";
+  const server = dev ? "http://localhost:3000" : "";
 
   const res = await fetch(`${server}/api/?q=${q}`);
   if (!res.ok) {
