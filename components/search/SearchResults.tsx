@@ -3,11 +3,9 @@ import SearchResultItem from "./SearchResultItem";
 
 async function getData(q: string) {
   const dev = process.env.NODE_ENV !== "production";
-  const server = dev
-    ? "http://localhost:3000"
-    : "https://your_deployment.server.com";
+  const server = dev ? "http://localhost:3000" : "search-app-inky.vercel.app";
 
-  const res = await fetch(`http://localhost:3000/api/?q=${q}`);
+  const res = await fetch(`${server}/api/?q=${q}`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
