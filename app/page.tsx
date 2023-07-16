@@ -1,4 +1,5 @@
 "use client";
+import AddDocument from "@/components/search/AddDocument";
 import SearchInput from "@/components/search/SearchInput";
 import SearchResults from "@/components/search/SearchResults";
 import { useSearchParams } from "next/navigation";
@@ -13,7 +14,10 @@ export default function Home() {
           ease
         </span>
       </h1>
-      <SearchInput />
+      <div className="flex space-x-2 items-center">
+        <SearchInput className="flex-1" />
+        <AddDocument />
+      </div>
       <SearchResults q={searchParams.get("q")} />
     </main>
   );
